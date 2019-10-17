@@ -1,0 +1,17 @@
+.separador{
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.fixar{
+    margin-left: 5px;
+    margin-top: 1px;
+}
+
+label{
+    color: #DEDEDE;
+}
+
+.danger {
+    color: #cc285c;
+}

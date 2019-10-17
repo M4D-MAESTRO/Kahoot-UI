@@ -1,0 +1,73 @@
+<p-panel header="Pergunta">
+    <form [formGroup]="formulario">
+        <div class="p-grid">
+
+            <span class="p-col-12 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="pergunta"></textarea>
+                <label class="fixar" for="float-input">Pergunta</label>
+                <p class="danger" *ngIf="formulario.controls.pergunta.dirty && formulario.controls.pergunta.errors" margin-left>Valor inválido</p>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="alternativaCerta"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.alternativaCerta.dirty && formulario.controls.alternativaCerta.errors" margin-left>Valor inválido</p>
+                <label class="fixar" for="float-input">Alternativa certa</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="feedBackCerta"></textarea>
+                <label class="fixar" for="float-input">Feedback da alternativa certa</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="alternativaErrada1"></textarea>
+                <label class="fixar" for="float-input">Alternativa errada - 1</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="feedBackErrada1"></textarea>
+                <label class="fixar" for="float-input">Feedback da alternativa errada - 1</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="alternativaErrada2"></textarea>
+                <label class="fixar" for="float-input">Alternativa errada - 2</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="feedBackErrada2"></textarea>
+                <label class="fixar" for="float-input">Feedback da alternativa errada - 2</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="alternativaErrada3"></textarea>
+                <label class="fixar" for="float-input">Alternativa errada - 3</label>
+            </span>
+
+            <span class="p-col-5 separador ui-float-label">
+                <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
+                    formControlName="feedBackErrada3"></textarea>
+                <label class="fixar" for="float-input">Feedback da alternativa errada - 3</label>
+            </span>
+
+            <div class="p-col-12 p-col-align-end" style="margin-left: 10px;">
+                <button pButton type="submit" label="Salvar questão" (click)="salvarQuestao()" 
+                [disabled]= "formulario.invalid"></button>
+
+                <button style="margin-left: 10px;" pButton type="submit" label="Terminar questionário"
+                    (click)="terminarQuestionario()"></button>
+            </div>
+
+        </div>
+    </form>
+</p-panel>
+<p-toast></p-toast>
+<br>
