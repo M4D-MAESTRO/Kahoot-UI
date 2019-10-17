@@ -6,55 +6,62 @@
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="pergunta"></textarea>
                 <label class="fixar" for="float-input">Pergunta</label>
-                <p class="danger" *ngIf="formulario.controls.pergunta.dirty && formulario.controls.pergunta.errors" margin-left>Valor inválido</p>
+                <p class="danger" *ngIf="formulario.controls.pergunta.dirty && formulario.controls.pergunta.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="alternativaCerta"></textarea>
-                    <p class="danger" *ngIf="formulario.controls.alternativaCerta.dirty && formulario.controls.alternativaCerta.errors" margin-left>Valor inválido</p>
+                    <p class="danger" *ngIf="formulario.controls.alternativaCerta.dirty && formulario.controls.alternativaCerta.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Alternativa certa</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="feedBackCerta"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.feedBackCerta.dirty && formulario.controls.feedBackCerta.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Feedback da alternativa certa</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="alternativaErrada1"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.alternativaErrada1.dirty && formulario.controls.alternativaErrada1.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Alternativa errada - 1</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="feedBackErrada1"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.feedBackErrada1.dirty && formulario.controls.feedBackErrada1.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Feedback da alternativa errada - 1</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="alternativaErrada2"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.alternativaErrada2.dirty && formulario.controls.alternativaErrada2.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Alternativa errada - 2</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="feedBackErrada2"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.feedBackErrada2.dirty && formulario.controls.feedBackErrada2.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Feedback da alternativa errada - 2</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="alternativaErrada3"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.alternativaErrada3.dirty && formulario.controls.alternativaErrada3.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Alternativa errada - 3</label>
             </span>
 
             <span class="p-col-5 separador ui-float-label">
                 <textarea class="p-col-12" pInputTextarea type="text" [rows]="3" [cols]="50" autoResize="false"
                     formControlName="feedBackErrada3"></textarea>
+                    <p class="danger" *ngIf="formulario.controls.feedBackErrada3.dirty && formulario.controls.feedBackErrada3.errors" margin-left>Campo obrigatório (máx: 255 caracteres)</p>
                 <label class="fixar" for="float-input">Feedback da alternativa errada - 3</label>
             </span>
 

@@ -3,6 +3,7 @@ import { NewQuestionarioDTO } from '../models/newQuestionario.dto';
 import { QuestaoDTO } from '../models/questao.dto';
 import { MessageService } from 'primeng/api';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { QuestionarioService } from '../servicies/questionario.service';
 
 @Component({
   selector: 'app-cadastrar-questionario',
@@ -28,19 +29,20 @@ export class CadastrarQuestionarioComponent implements OnInit {
   formulario: FormGroup;
 
   constructor(public formBuilder: FormBuilder,
-    private messageService: MessageService) {
+    private messageService: MessageService,
+    private apiService: QuestionarioService) {
     this.formulario = this.formBuilder.group({
-      pergunta: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
+      pergunta: ['Teste', [Validators.required, Validators.maxLength(255)]],
 
-      alternativaCerta: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
-      feedBackCerta: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
+      alternativaCerta: ['Teste', [Validators.required, Validators.maxLength(255)]],
+      feedBackCerta: ['Teste', [Validators.required, Validators.maxLength(255)]],
 
-      alternativaErrada1: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
-      feedBackErrada1: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(255)]],
-      alternativaErrada2: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
-      feedBackErrada2: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
-      alternativaErrada3: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
-      feedBackErrada3: ['Teste', [Validators.required, Validators.minLength(3), Validators.maxLength(120)]],
+      alternativaErrada1: ['Teste', [Validators.required, Validators.maxLength(255)]],
+      feedBackErrada1: ['Teste', [Validators.required, Validators.maxLength(255)]],
+      alternativaErrada2: ['Teste', [Validators.required, Validators.maxLength(120)]],
+      feedBackErrada2: ['Teste', [Validators.required, Validators.maxLength(120)]],
+      alternativaErrada3: ['Teste', [Validators.required, Validators.maxLength(120)]],
+      feedBackErrada3: ['Teste', [Validators.required, Validators.maxLength(120)]],
     })
   }
 
@@ -58,12 +60,31 @@ export class CadastrarQuestionarioComponent implements OnInit {
       severity: 'success',
       summary: 'Questão adicionada ao questionário com sucesso!'
     });
-    
+
   }
 
   terminarQuestionario() {
     //this.questionario.questoes.forEach(questao => console.log(questao));
-    console.log(this.formulario.controls.pergunta.errors)
+    this.apiService.saveOne(this.questionario)
+      .subscribe(() => {
+        this.messageService.add({
+          severity: 'success',
+          summary: 'Questionário salvo com sucesso!'
+        })
+      },
+        res => {
+          let msg = "Erro inesperado. Tente novamente!"
+
+          if (res.error.message) {
+            msg = res.error.message;
+          }
+
+          this.messageService.add({
+            severity: 'error',
+            summary: msg
+          })
+
+        })
   }
 
 }
