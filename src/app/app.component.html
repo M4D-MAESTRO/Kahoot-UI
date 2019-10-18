@@ -1,24 +1,4 @@
-<p-menubar [model]="items" (click)="changeMenu($event)"></p-menubar>
+<p-menubar [model]="items" ></p-menubar>
 <br>
-<div [ngSwitch]="conditionExpression">
-    <div *ngSwitchCase="opcao == 1">
-         
-    </div>
-
-    <div *ngSwitchCase="opcao == 2">
-         
-    </div>
-
-    <div *ngSwitchCase="opcao == 3">
-        
-    </div>
-
-    <div *ngSwitchCase="opcao == 4">
-        
-    </div>
-
-    <div *ngSwitchDefault>
-        
-    </div>
-</div>
 <router-outlet><router-outlet>
+    

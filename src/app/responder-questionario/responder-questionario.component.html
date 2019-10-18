@@ -1,1 +1,12 @@
-<p>responder-questionario works!</p>
+<div class="p-grid p-justify-center p-align-center" style="margin-top: 10%">
+    <p-card header="Código do questionário" [style]="{width: '320px'}" styleClass="ui-card-shadow">
+        <span class="ui-float-label" style="margin: 25px 0px 0px 0px;">
+            <input id="float-input" type="text" size="30" [(ngModel)]="codigo" pInputText>
+            <label for="float-input" >Código</label>
+            <p class="danger" *ngIf="desabilitar()" margin-left>Insira apenas números!</p>
+        </span>
+        <p-footer>
+            <button [disabled]="desabilitar()" pButton type="button" label="Acessar" icon="pi pi-check" style="margin-left: 11.5em" (click)="acessar()"></button>
+        </p-footer>
+    </p-card>
+</div>

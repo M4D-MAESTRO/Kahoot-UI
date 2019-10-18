@@ -18,4 +18,8 @@ export class QuestionarioService {
   saveOne(questionario: NewQuestionarioDTO): Observable<any> {
     return this.http.post(`${API_URL}questionario`, questionario);
   }
+
+  getById(id: number): Observable<any> {
+    return this.http.get(`${API_URL}questionario/${id}`);
+  }
 }

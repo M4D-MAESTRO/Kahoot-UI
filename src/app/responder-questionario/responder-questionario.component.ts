@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-responder-questionario',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResponderQuestionarioComponent implements OnInit {
 
-  constructor() { }
+  public codigo: number = 0;
+
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+
+  acessar() {
+    this.route.navigate(['/responder', this.codigo]);
+  }
+
+  desabilitar(): boolean {
+    if (!isNaN(this.codigo)) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }

@@ -1,0 +1,12 @@
+.acerto{
+color: rgb(1, 187, 1);
+display: inline;
+font-size: 1rem;
+}
+
+.error{
+    color: rgb(226, 39, 39);
+    display: inline;
+    font-size: 1rem;
+    margin-left: 15px;
+}

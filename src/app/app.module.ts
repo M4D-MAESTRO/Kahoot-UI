@@ -18,6 +18,10 @@ import { MenubarModule } from 'primeng/menubar';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { CardModule } from 'primeng/card';
+import { RadioButtonModule } from 'primeng/radiobutton';
+import { QuestionarioFimComponent } from './questionario-fim/questionario-fim.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -25,7 +29,9 @@ import { ToastModule } from 'primeng/toast';
     AppComponent,
     CadastrarQuestionarioComponent,
     ResponderQuestionarioComponent,
-    QuestionarioComponent
+    QuestionarioComponent,
+    QuestionarioFimComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +46,9 @@ import { ToastModule } from 'primeng/toast';
     ButtonModule,
     MenubarModule,
     InputTextareaModule,
-    ToastModule
+    ToastModule,
+    CardModule,
+    RadioButtonModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

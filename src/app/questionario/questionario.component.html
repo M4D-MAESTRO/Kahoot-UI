@@ -1,1 +1,57 @@
-<p>questionario works!</p>
+<div class="p-grid p-justify-center p-align-center" style="margin-top: 10%">
+    <p-card [header]="cabecalho" [style]="{width: '480px'}" styleClass="ui-card-shadow">
+
+        <h4 id="float-input">{{ questaoAtual.pergunta }}</h4>
+
+        <div class="ui-g" style="width:250px;margin-bottom:10px">
+            <div class="ui-g-12" *ngIf="posicao==0">
+                <p-radioButton [disabled]="respondido"  name="group1" value="certa" [label]="questaoAtual.alternativaCerta" [(ngModel)]="val1"
+                    inputId="opt1">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12">
+                <p-radioButton [disabled]="respondido" name="group1" value="errada1" [label]="questaoAtual.alternativaErrada1"
+                    [(ngModel)]="val1" inputId="opt2">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12" *ngIf="posicao==1">
+                <p-radioButton [disabled]="respondido" name="group1" value="certa" [label]="questaoAtual.alternativaCerta" [(ngModel)]="val1"
+                    inputId="opt1">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12">
+                <p-radioButton [disabled]="respondido" name="group1" value="errada2" [label]="questaoAtual.alternativaErrada2"
+                    [(ngModel)]="val1" inputId="opt3">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12" *ngIf="posicao==2">
+                <p-radioButton [disabled]="respondido" name="group1" value="certa" [label]="questaoAtual.alternativaCerta" [(ngModel)]="val1"
+                    inputId="opt1">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12">
+                <p-radioButton [disabled]="respondido" name="group1" value="errada3" [label]="questaoAtual.alternativaErrada3"
+                    [(ngModel)]="val1" inputId="opt3">
+                </p-radioButton>
+            </div>
+
+            <div class="ui-g-12" *ngIf="posicao==3">
+                <p-radioButton [disabled]="respondido" name="group1" value="certa" [label]="questaoAtual.alternativaCerta" [(ngModel)]="val1"
+                    inputId="opt1">
+                </p-radioButton>
+            </div>
+            <p class="feedback" *ngIf="respondido" margin-left>{{ getFeedBack() }}</p>
+        </div>
+        <p-footer>
+            <button [disabled]="desabilitarResposta()" pButton type="button" label="Responder" icon="pi pi-check"
+                style="margin-right: 15px;" (click)="responder()"></button>
+            <button [disabled]="!respondido" pButton type="button" label="Próxima" icon="pi pi-arrow-right"
+                (click)="proxima()"></button>
+        </p-footer>
+    </p-card>
+</div>

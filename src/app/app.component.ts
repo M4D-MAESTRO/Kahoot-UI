@@ -15,6 +15,10 @@ export class AppComponent {
   ngOnInit() {
     this.items = [
       {
+        icon: 'pi pi-fw pi-home',
+        routerLink: "/"
+      },
+      {
         label: 'Opções do professor',
         icon: 'pi pi-fw pi-id-card',
         items: [{
@@ -24,10 +28,6 @@ export class AppComponent {
             {
               label: 'Questionário',
               icon: 'pi pi-fw pi-align-justify',
-              command: () => {
-                this.opcao = 1
-                this.changeMenu()
-              },
               routerLink: "/cadastrar"
             }]
         }]
@@ -45,7 +45,4 @@ export class AppComponent {
       }];
   }
 
-  changeMenu() {
-    
-  }
 }
