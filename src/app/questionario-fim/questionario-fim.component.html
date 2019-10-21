@@ -1,18 +1,16 @@
 <div class="p-grid p-justify-center p-align-center" style="margin-top: 10%">
-    <p-card header="Resultado" [subheader]="getFeed()" [style]="{width: '360px'}" styleClass="ui-card-shadow">
+    <p-card [header]="getResultado()" [subheader]="getFeed()" [style]="{width: '360px'}" styleClass="ui-card-shadow">
         <p-header>
 
         </p-header>
 
-        <div>
-            <h3>Quantidade de questões: {{ size }}</h3>
-            <span class="acerto">Acertos: {{ acertos }}</span>
-            <span class="error">Erros: {{ erros }}</span>
+        <div style="margin: 15px 0px;">
+            <p-chart type="pie" [data]="data"></p-chart>
         </div>
 
         <p-footer>
-            <button pButton type="button" label="Voltar à pagina inicial" icon="pi pi-home"
-                class="ui-button-secondary" (click)="home()"></button>
+            <button style="margin-left: 20%;" pButton type="button" label="Voltar à pagina inicial" icon="pi pi-home" class="ui-button-secondary"
+                (click)="home()"></button>
         </p-footer>
     </p-card>
 </div>

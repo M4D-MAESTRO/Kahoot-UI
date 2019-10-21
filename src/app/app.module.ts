@@ -10,6 +10,8 @@ import { AppComponent } from './app.component';
 import { CadastrarQuestionarioComponent } from './cadastrar-questionario/cadastrar-questionario.component';
 import { ResponderQuestionarioComponent } from './responder-questionario/responder-questionario.component';
 import { QuestionarioComponent } from './questionario/questionario.component';
+import { QuestionarioFimComponent } from './questionario-fim/questionario-fim.component';
+import { HomeComponent } from './home/home.component';
 
 import { PanelModule } from 'primeng/panel';
 import { InputTextModule } from 'primeng/inputtext';
@@ -20,8 +22,7 @@ import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { CardModule } from 'primeng/card';
 import { RadioButtonModule } from 'primeng/radiobutton';
-import { QuestionarioFimComponent } from './questionario-fim/questionario-fim.component';
-import { HomeComponent } from './home/home.component';
+import { ChartModule } from 'primeng/chart';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { HomeComponent } from './home/home.component';
     InputTextareaModule,
     ToastModule,
     CardModule,
-    RadioButtonModule
+    RadioButtonModule,
+    ChartModule
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

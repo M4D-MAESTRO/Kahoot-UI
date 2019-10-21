@@ -12,6 +12,8 @@ export class QuestionarioFimComponent implements OnInit {
   erros: number = 0;
   size: number = 0;
 
+  data: any;
+
   constructor(private route: ActivatedRoute,
     private r: Router) {
     this.route.params.subscribe(param => {
@@ -19,36 +21,56 @@ export class QuestionarioFimComponent implements OnInit {
       this.erros = +param['erros'];
       this.size = +param['size'];
     });
+
+    this.data = {
+      labels: ['Acertos', 'Erros'],
+      datasets: [
+        {
+          data: [this.acertos, this.erros],
+          backgroundColor: [
+            "#36A2EB",
+            "#FF6384"
+          ],
+          hoverBackgroundColor: [
+            "#36A2EB",
+            "#FF6384"
+          ]
+        }]
+    };
   }
 
   ngOnInit() {
-   
+
   }
 
-  home(){
+  home() {
     this.r.navigate(['']);
   }
 
   getFeed(): string {
-    if(this.acertos == this.size){
+    if (this.acertos == this.size) {
       return "EXCELENTE!";
     }
 
-    if(this.acertos > this.erros+1){
+    if (this.acertos > this.erros + 1) {
       return "MUITO BOM!";
     }
 
-    if(this.acertos == this.erros){
+    if (this.acertos == this.erros) {
       return "PRECISA MELHORAR!";
     }
 
-    if(this.acertos > this.erros-1){
+    if (this.acertos > this.erros - 1) {
       return "RUIM!";
     }
 
-    if(this.erros == this.size){
+    if (this.erros == this.size) {
       return "PÉSSIMO!";
     }
+  }
+
+  getResultado(): string {
+    return `Resultado: ${this.acertos}/${this.size}`
   }
 
 }
